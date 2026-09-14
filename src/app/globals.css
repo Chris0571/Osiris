@@ -41,7 +41,7 @@
   /* ── Map Layers ──
      What the map itself draws with. Mirrored in src/lib/map-palette.ts, which
      reads these back; the two copies are pinned together by its tests. */
-  --map-cctv: #00e676;
+  --map-cctv: #D4AF37;
   --map-sat-comms: #00e676;
   --map-sat-military: #ff3d3d;
   --map-sat-navigation: #448aff;
