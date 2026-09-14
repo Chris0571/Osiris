@@ -71,7 +71,7 @@ export const AOI_LAYERS: LayerSpec[] = [
     detail: e => e.destination || e.flag || undefined },
   { key: 'satellites', label: 'Satellites', color: '#E040FB', labelFields: ['name', 'noradId'],
     detail: e => (e.altitude ? `${Math.round(e.altitude)} km` : undefined) },
-  { key: 'cameras', label: 'CCTV cameras', color: '#00E676', labelFields: ['name', 'id'],
+  { key: 'cameras', label: 'CCTV cameras', color: '#D4AF37', labelFields: ['name', 'id'],
     detail: e => [e.city, e.country].filter(Boolean).join(', ') || undefined },
   { key: 'earthquakes', label: 'Earthquakes', color: '#FF9500', labelFields: ['place', 'id'],
     detail: e => (e.magnitude != null ? `M${e.magnitude}` : undefined) },

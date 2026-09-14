@@ -51,7 +51,7 @@ export const MAP_VARS: Record<MapPaletteKey, string> = {
  * suite pins the two copies together.
  */
 export const MAP_DEFAULTS: MapPalette = {
-  cctv: '#00e676',
+  cctv: '#d4af37',
   satComms: '#00e676',
   satMilitary: '#ff3d3d',
   satNavigation: '#448aff',

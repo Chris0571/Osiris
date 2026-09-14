@@ -131,7 +131,7 @@ function translateCCTV(cameras: any[]): PolybolosEntity[] {
     source: { provider: 'osiris', feed: 'cctv-network', originalId: c.id, confidence: 1.0 },
     timestamp: new Date().toISOString(),
     properties: { city: c.city, country: c.country, source: c.source, feed_url: c.feed_url, stream_url: c.stream_url },
-    display: { color: '#39FF14', icon: 'dot-cctv', layerType: 'circle' as const },
+    display: { color: '#D4AF37', icon: 'dot-cctv', layerType: 'circle' as const },
   }));
 }
 
