@@ -155,7 +155,7 @@ async function fetchBatch(ids: string[]): Promise<OpenCctvRecord[]> {
 /** The marker index, fetched once and shared by every Asian sub-region. */
 const markerIndex = cachedSource('opencctv-index', async (): Promise<MarkerIndex[]> => {
   const res = await stealthFetch(MARKERS, {
-    signal: AbortSignal.timeout(30000),
+    signal: AbortSignal.timeout(45000),
     headers: { Accept: 'application/json', Referer: 'https://opencctv.org/' },
   });
   if (!res.ok) throw new Error(`OpenCCTV markers HTTP ${res.status}`);
