@@ -16,23 +16,30 @@ services:
     env_file:
       - path: .env
         required: false
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
     environment:
       - NODE_OPTIONS=--dns-result-order=ipv4first
       - NODE_ENV=production
       - PORT=3000
       - HOSTNAME=0.0.0.0
+      - SCANNER_URL=http://osiris-intel:4000
+      - SCANNER_KEY=${SCANNER_KEY}  
     extra_hosts:
       - "host.docker.internal:host-gateway"
     restart: unless-stopped
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=1
     networks:
       - default
-      - umami_default
+    #  - umami_default
 
   osiris-cache:
     image: nginx:alpine
     container_name: osiris-cache
     ports:
-      - "8080:8080"
+      - "8085:8080"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - nginx-cache:/var/cache/nginx
@@ -49,7 +56,13 @@ services:
     container_name: osiris-intel
     ports:
       - "4000:4000"
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
     restart: unless-stopped
+    environment:
+      - OSIRIS_KEY=${SCANNER_KEY}
+      - PORT=4000
     networks:
       - default
 
@@ -57,8 +70,14 @@ volumes:
   nginx-cache:
 
 networks:
-  umami_default:
-    external: true
+  default:
+    driver: bridge
+    driver_opts:
+      com.docker.network.driver.mtu: 1360
+  
+  # (Se avevi lasciato umami_default, lascialo pure qui sotto)
+  # umami_default:
+  #   external: true
 
 # ── CasaOS app-store metadata (ignored by plain Docker Compose) ──
 x-casaos:

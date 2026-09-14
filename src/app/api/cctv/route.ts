@@ -38,7 +38,7 @@ import { fetchFloridaCameras } from './florida';
 import { fetchGeorgiaCameras } from './georgia';
 import { fetchNorthCarolinaCameras } from './northcarolina';
 import { fetchArizonaCameras } from './arizona';
-import { fetchEastAsiaCameras, fetchSeAsiaCameras, fetchWestAsiaCameras } from './opencctv';
+import { fetchEastAsiaCameras, fetchSeAsiaCameras, fetchWestAsiaCameras, fetchOpenCctvItalyCameras } from './opencctv';
 import {
   fetchLatamLiveCameras,
   fetchAfricaLiveCameras,
@@ -484,7 +484,7 @@ const RAW_REGION_FETCHERS: Record<string, RegionFetcher> = {
   'turkey': fetchTurkeyCameras,
   'romania': fetchRomaniaCameras,
   'australia': fetchAustraliaCameras,
-  'italy': fetchItalyCameras,
+  'italy': async () => { const [w, c] = await Promise.all([fetchItalyCameras(), fetchOpenCctvItalyCameras()]); return [...w, ...c]; },
   'czechia': fetchCzechiaCameras,
   'slovakia': fetchSlovakiaCameras,
   'germany': fetchGermanyCameras,

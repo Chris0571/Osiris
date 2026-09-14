@@ -230,12 +230,13 @@ function OsirisMap({ data, activeLayers, onEntityClick, onMouseCoords, onRightCl
     
     // Select basemap style
     const styleUrl = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
+    //const styleUrl = 'https://tiles.openfreemap.org/styles/liberty';
 
     const container = containerRef.current;
     const baseOptions = {
       container,
       style: styleUrl,
-      center: [25.48, 42.70] as [number, number], zoom: 6.5, minZoom: 1.5, maxZoom: 18,
+      center: [12.50, 42.00] as [number, number], zoom: 5.3, minZoom: 1.5, maxZoom: 21,
       attributionControl: false as const,
       maxPitch: 85,
       transformRequest: (url: string) => {
@@ -2312,10 +2313,12 @@ function OsirisMap({ data, activeLayers, onEntityClick, onMouseCoords, onRightCl
           map.addSource('satellite-tiles', {
             type: 'raster',
             tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],
-            tileSize: 256,
-            maxzoom: 18,
+            // tiles: ['https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'],
+            // tiles: ['https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2020_3857/default/g/{z}/{y}/{x}'],
+	          tileSize: 256,
+            maxzoom: 21,
           });
-          map.addLayer({ id: 'satellite-layer', type: 'raster', source: 'satellite-tiles', paint: { 'raster-opacity': 0.85 } }, 'day-night-fill');
+          map.addLayer({ id: 'satellite-layer', type: 'raster', source: 'satellite-tiles', paint: { 'raster-opacity': 1.0 } }, 'day-night-fill');
         } else {
           map.setLayoutProperty('satellite-layer', 'visibility', 'visible');
         }

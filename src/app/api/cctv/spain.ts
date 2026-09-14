@@ -89,6 +89,13 @@ const SKYLINE_SPAIN: CctvCamera[] = [
   { id: 'sky-es-sevilla-sf', lat: 37.3891, lng: -5.9945, name: 'Sevilla - Plaza de San Francisco', city: 'Sevilla', country: 'Spain', feed_url: '/api/cctv/proxy?url=https%3A%2F%2Fcdn.skylinewebcams.com%2Flive823.jpg', external_url: 'https://www.skylinewebcams.com/en/webcam/espana/andalucia/sevilla/siviglia-plaza-san-francisco.html', source: 'SkylineWebcams' },
   { id: 'sky-es-barrosa', lat: 36.3700, lng: -6.1700, name: 'Playa de la Barrosa - Chiclana', city: 'Chiclana', country: 'Spain', feed_url: '/api/cctv/proxy?url=https%3A%2F%2Fcdn.skylinewebcams.com%2Flive1636.jpg', external_url: 'https://www.skylinewebcams.com/en/webcam/espana/andalucia/cadiz/chiclana-de-la-frontera-playa-de-la-barrosa.html', source: 'SkylineWebcams' },
   { id: 'sky-es-cocedores', lat: 37.3850, lng: -1.6400, name: 'Pulpí - Playa de los Cocedores', city: 'Pulpí', country: 'Spain', feed_url: '/api/cctv/proxy?url=https%3A%2F%2Fcdn.skylinewebcams.com%2Flive5987.jpg', external_url: 'https://www.skylinewebcams.com/en/webcam/espana/andalucia/almeria/pulpi-playa-de-los-cocedores.html', source: 'SkylineWebcams' },
+  
+
+  // SURF'
+  { id: 'sky-es-playa-cura',
+    lat: 39.5960, lng: -9.0725, name: 'Nazaré', city: 'Nazaré', country: 'Portugal', feed_url: 'https://blob1.nazarewaves.com/memfs/32f6a35e-956f-4cd8-bf9a-8bfc89fa95c9.jpg?t=639243960063405249', external_url: 'https://nazarewaves.com/en/webcams', source: 'Nazaréwaves' },
+
+
   // ─── Costa Blanca / Valencia ───
   { id: 'sky-es-benidorm-p', lat: 38.5322, lng: -0.1270, name: 'Benidorm - Playa de Poniente', city: 'Benidorm', country: 'Spain', feed_url: '/api/cctv/proxy?url=https%3A%2F%2Fcdn.skylinewebcams.com%2Flive630.jpg', external_url: 'https://www.skylinewebcams.com/en/webcam/espana/comunidad-valenciana/alicante/benidorm-playa-poniente-sur.html', source: 'SkylineWebcams' },
   { id: 'sky-es-benidorm-pp', lat: 38.5340, lng: -0.1250, name: 'Benidorm - Playa de Poniente - Puerto', city: 'Benidorm', country: 'Spain', feed_url: '/api/cctv/proxy?url=https%3A%2F%2Fcdn.skylinewebcams.com%2Flive293.jpg', external_url: 'https://www.skylinewebcams.com/en/webcam/espana/comunidad-valenciana/alicante/benidorm-playa-poniente.html', source: 'SkylineWebcams' },

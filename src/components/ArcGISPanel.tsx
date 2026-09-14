@@ -59,11 +59,14 @@ export interface ArcGISPanelProps {
 }
 
 const CATEGORIES = [
-  { label: 'Pipelines', query: 'pipeline' },
-  { label: 'Power Grid', query: 'power grid transmission' },
-  { label: 'Infrastructure', query: 'critical infrastructure' },
-  { label: 'Military', query: 'military base installation' },
+  { label: 'Militari', query: 'basi militari' },
   { label: 'Emergency', query: 'emergency shelter evacuation' },
+  { label: 'Frane & Alluvioni', query: 'ISPRA dissesto idrogeologico frane' },
+  { label: 'Rischio Sismico', query: 'INGV terremoti faglie sismica' },
+  { label: 'Protezione Civile', query: 'Protezione Civile emergenza piano' },
+  { label: 'Rete Elettrica', query: 'power grid transmission Terna' },
+  { label: 'Uso del Suolo', query: 'Regione Lazio uso del suolo vegetazione' },
+  { label: 'Infrastrutture', query: 'critical infrastructure Italia' },
 ] as const;
 
 const LAYER_COLORS = [
